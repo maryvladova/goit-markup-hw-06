@@ -627,6 +627,8 @@ p {
   border-radius: 4px;
   background-color: #2f303a;
   cursor: pointer;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subsription-form input:hover,
