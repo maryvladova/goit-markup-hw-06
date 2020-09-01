@@ -409,7 +409,7 @@
     <!-- Modal window -->
     <div data-modal class="backdrop is-hidden">
       <div class="modal">
-        <form class="application-form" autocomplete="off" method="post">
+        <form class="js-speaker-form" autocomplete="off" method="post">
           <h3 class="modal-header">Оставьте свои данные, мы вам перезвоним</h3>
           <div class="modal-items">
             <label class="label-header" for="name">Имя</label>
@@ -492,5 +492,20 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>
